@@ -1,0 +1,50 @@
+.et_builder_inner_content {
+    position: relative;
+    z-index: 1
+}
+
+.et_pb_section {
+    background-color: transparent
+}
+
+div.et_pb_section.et_pb_section_0_tb_footer {
+    background-size: 100% auto;
+    background-position: center top;
+    background-image: url(https://hiera.co.id/wp-content/uploads/2022/11/hiera-bsd-perumahan-rumah-city-bumi-serpong-damai-jual-harga-tangerang-selatan-sinarmas-land-pt-sinar-mitbana-mas-the-heartland-of-hiera-footer-background.jpg)!important;
+    background-repeat: no-repeat!important;
+}
+
+.et_pb_with_background  {
+    width: 100%
+}
+
+.row-width-modify {
+    width: 50%;
+    margin: auto;
+}
+
+.row-dith-modify-80 {
+    width: 80%;
+    margin: auto;
+}
+
+.dumb-link-color {
+    color: #666666;
+    font-size: 1.2rem!important;
+    line-height: 1.7em;
+}
+
+.margin-right-unique {
+    margin-right: 5.5%;
+}
+
+h4 {
+    color: #c1af61!important;
+    font-weight: 700;
+    font-family: 'Nunito Sans', Helvetica, Arial, Lucida, sans-serif;
+}
+
+body {
+}
+
+/*To preserve */
