@@ -73,10 +73,10 @@ export default function Home() {
                       src="logo.png"
                       className="img-fluid dark"
                       alt="Logo"
-                      style={{ maxWidth: "20%" }}
+                      style={{ maxWidth: "40%" }}
                     />
                   </a>
-                  <a className="navbar-brand" href="/">
+                  <a className="navbar-brand d-flex justify-content-end" href="/">
                     <img
                       src="logo2.png"
                       className="img-fluid dark"
