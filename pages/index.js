@@ -13,6 +13,9 @@ export default function Home() {
   const [unit, setUnit] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [salesCoordinator, setSalesCoordinator] = useState('');
+  const [salesOffice, setSalesOffice] = useState('');
+  const [salesExecutive, setSalesExecutive] = useState('');
 
   const letGO = async () => {
     if (agent === '' || unit === '') {
@@ -21,8 +24,10 @@ export default function Home() {
     }
 
     const data = {
-      agent: agent,
       unit: unit,
+      salesCoordinator: salesCoordinator,
+      salesOffice: salesOffice,
+      agent: agent,
     };
 
     function generateID() {
@@ -70,18 +75,18 @@ export default function Home() {
                 <div className="container position-relative d-flex justify-content-between align-items-center">
                   <a className="navbar-brand" href="/">
                     <img
-                      src="logo.png"
-                      className="img-fluid dark"
-                      alt="Logo"
-                      style={{ maxWidth: "40%" }}
-                    />
-                  </a>
-                  <a className="navbar-brand d-flex justify-content-end" href="/">
-                    <img
                       src="logo2.png"
                       className="img-fluid dark"
                       alt="Logo"
                       style={{ maxWidth: "20%" }}
+                    />
+                  </a>
+                  <a className="navbar-brand d-flex justify-content-end" href="/">
+                    <img
+                      src="logo.png"
+                      className="img-fluid dark"
+                      alt="Logo"
+                      style={{ maxWidth: "40%" }}
                     />
                   </a>
                 </div>
@@ -94,6 +99,15 @@ export default function Home() {
               <div className="row">
                 <div className="col">
                   <h1 className="mt-5">Agent Survey</h1>
+                  <p>
+                    Thank you for being a valued agent for HIERA.
+                  </p>
+                  <p>
+                    We invite you to vote for the Sales Coordinator who supported you best during your purchase process.
+                  </p>
+                  <p>
+                    Your feedback helps us recognize great service and continue improving the customer experience.
+                  </p>
                 </div>
               </div>
               <div className="container">
@@ -102,17 +116,155 @@ export default function Home() {
                     {success && <div className="alert alert-success">{success}</div>}
                     {error && <div className="alert alert-danger">{error}</div>}
                     <form>
+                      <label htmlFor="unit">Sales Office</label>
+                      <select
+                        type="text"
+                        className="form-control"
+                        id="unit"
+                        value={salesOffice}
+                        onChange={(e) => setSalesOffice(e.target.value)}
+                      >
+                        <option default value="">
+                          Select Sales Office
+                        </option>
+                        <option value="PT. Asia Rumah Utama">PT. Asia Rumah Utama</option>
+                        <option value="PT Momentum Properti Cemerlang">PT Momentum Properti Cemerlang</option>
+                        <option value="PT Sukses Muda Sejati">PT. Sukses Muda Sejati</option>
+                        <option value="PT Harmoni Inti Makmur">PT Harmoni Inti Makmur</option>
+                        <option value="PT Properti Berkat Cahaya Anug">PT Properti Berkat Cahaya Anug</option>
+                        <option value="PT Pintu Berkat Bersama">PT Pintu Berkat Bersama</option>
+                        <option value="PT. Catur Graha Sejahtera">PT. Catur Graha Sejahtera</option>
+                        <option value="PT Enam Gemilang Abadi">PT Enam Gemilang Abadi</option>
+                        <option value="PT Kemah Properti Indonesia">PT Kemah Properti Indonesia</option>
+                        <option value="PT Berkat Mulia Pratama">PT Berkat Mulia Pratama</option>
+                        <option value="PT Generasi Properti Nusantara">PT Generasi Properti Nusantara</option>
+                        <option value="PT Pratama Rumah Indonesia">PT Pratama Rumah Indonesia</option>
+                        <option value="PT. Elitpro Gading Perkasa">PT. Elitpro Gading Perkasa</option>
+                        <option value="PT Kurnia Mitra Harmoni">PT Kurnia Mitra Harmoni</option>
+                        <option value="PT Pintu Berkat Bersama">PT Pintu Berkat Bersama</option>
+                        <option value="PT Analis Properti Indonesia">PT Analis Properti Indonesia</option>
+                        <option value="PT Pintar Properti Nusantara">PT Pintar Properti Nusantara</option>
+                        <option value="PT Kencana Abadi Propertindo">PT Kencana Abadi Propertindo</option>
+                        <option value="PT. Tri Elemen Properti">PT. Tri Elemen Properti</option>
+                        <option value="PT. Sentosa Majujaya Propertin">PT. Sentosa Majujaya Propertin</option>
+                        <option value="PT. Catur Graha Sejahtera">PT. Catur Graha Sejahtera</option>
+                      </select>
+                      <label htmlFor="agent">Sales Executie</label>
+                      <select
+                        className="form-select"
+                        id="agent"
+                        value={salesExecutive}
+                        onChange={(e) => setSalesExecutive(e.target.value)}
+                      >
+                        <option default value="">
+                          Select Coordinator
+                        </option>
+                        {salesOffice == "PT. Asia Rumah Utama" && <option value="Andre Leonardo" >Andre Leonardo</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && <option value="Andrian Chandana Deva" >Andrian Chandana Deva</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && <option value="Kelvin Ang Luis" >Kelvin Ang Luis</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && <option value="William Chandra Tjiang" >William Chandra Tjiang</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && <option value="Reza Alhadithia" >Reza Alhadithia</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && <option value="Gerry Lineker Armando Megawe" >Gerry Lineker Armando Megawe</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && <option value="Shelvyana Wijayanti" >Shelvyana Wijayanti</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && <option value="Reza Alhadithia" >Reza Alhadithia</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && <option value="Swandy Sutanto" >Swandy Sutanto</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && <option value="Deanry Irsan" >Deanry Irsan</option> }
+                        {salesOffice == "PT Momentum Properti Cemerlang" && <option value="Yoga Tirtabudi" >Yoga Tirtabudi</option> }
+                        {salesOffice == "PT Momentum Properti Cemerlang" && <option value="Kevin Ananta Riadi" >Kevin Ananta Riadi</option> }
+                        {salesOffice == "PT Momentum Properti Cemerlang" && <option value="Herman Yosef" >Herman Yosef                          </option> }
+                        {salesOffice == "PT Momentum Properti Cemerlang" && <option value="Yamin Tanutama" >Yamin Tanutama</option> }
+                        {salesOffice == "PT Sukses Muda Sejati" && <option value="Nina Mardiana" >Nina Mardiana                          </option> }
+                        {salesOffice == "PT Harmoni Inti Makmur" && <option value="Felix Kuosanto" >Felix Kuosanto</option> }
+                        {salesOffice == "PT Properti Berkat Cahaya Anug" && <option value="Anthonye Caeisar Lahoya" >Anthonye Caeisar Lahoya</option> }
+                        {salesOffice == "PT Pintu Berkat Bersama" && <option value="Michael" >Michael</option> }
+                        {salesOffice == "PT. Catur Graha Sejahtera" && <option value="Zacharia Agusto Dumais" >Zacharia Agusto Dumais</option> }
+                        {salesOffice == "PT Enam Gemilang Abadi" && <option value="Darmawan" >Darmawan</option> }
+                        {salesOffice == "PT Kemah Properti Indonesia" && <option value="Sherly" >Sherly</option> }
+                        {salesOffice == "PT Berkat Mulia Pratama" && <option value="Ardian Gunawan" >Ardian Gunawan</option> }
+                        {salesOffice == "PT Generasi Properti Nusantara" && <option value="Madelyn Wongkar" >Madelyn Wongkar</option> }
+                        {salesOffice == "PT Gading Serpong Properti" && <option value="Renny Rosely" >Renny Rosely</option> }
+                        {salesOffice == "PT Pratama Rumah Indonesia" && <option value="YUKI" >YUKI</option> }
+                        {salesOffice == "PT. Elitpro Gading Perkasa" && <option value="Swandy Sutanto" >Swandy Sutanto</option> }
+                        {salesOffice == "PT Kurnia Mitra Harmoni" && <option value="Martinus Hendratha" >Martinus Hendratha</option> }
+                        {salesOffice == "PT Pintu Berkat Bersama" && <option value="Michael" >Michael</option> }
+                        {salesOffice == "PT Pratama Rumah Indonesia" && <option value="Hendri" >Hendri</option> }
+                        {salesOffice == "PT Analis Properti Indonesia" && <option value="Corry Stefanie" >Corry Stefanie</option> }
+                        {salesOffice == "PT Kemah Properti Indonesia" && <option value="Sharmaine Huberta A Dermawan" >Sharmaine Huberta A Dermawan</option> }
+                        {salesOffice == "PT Pintar Properti Nusantara" && <option value="Putra Andika" >Putra Andika</option> }
+                        {salesOffice == "PT Kencana Abadi Propertindo" && <option value="William Handoko" >William Handoko</option> }
+                        {salesOffice == "PT. Tri Elemen Properti" && <option value="Vivi Hermin" >Vivi Hermin</option> }
+                        {salesOffice == "PT. Sentosa Majujaya Propertin" && <option value="Jeffrey Hartanto" >Jeffrey Hartanto</option> }
+                        {salesOffice == "PT. Tri Elemen Properti" && <option value="Vivi Hermin" >Vivi Hermin</option> }
+                        {salesOffice == "PT. Tri Elemen Properti" && <option value="Irene" >Irene</option> }
+                        {salesOffice == "PT Pratama Rumah Indonesia" && <option value="Kevin Krieski" >Kevin Krieski</option> }
+                        {salesOffice == "PT. Catur Graha Sejahtera" && <option value="Zacharia Agusto Dumais" >Zacharia Agusto Dumais</option> }
+                      </select>
                       <label htmlFor="unit">Seller Unit</label>
-                      <input
+                      <select
                         type="text"
                         className="form-control"
                         id="unit"
                         value={unit}
                         onChange={(e) => setUnit(e.target.value)}
-                      />
-                      <label htmlFor="agent">Agent Name</label>
+                      >
+                                                <option default value="">
+                          Select Office & Coordinator to Select Unit
+                        </option>
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Andre Leonardo" && <option value="B1/23" >B1/23</option> }
+                        {salesOffice == "PT Momentum Properti Cemerlang" && salesExecutive == "Yoga Tirtabudi" && <option value="B1/29" >B1/29</option> }
+                        {salesOffice == "PT Sukses Muda Sejati" && salesExecutive == "Nina Mardiana" && <option value="B3/30" >B3/30</option> }
+                        {salesOffice == "PT Harmoni Inti Makmur" && salesExecutive == "Felix Kuosanto" && <option value="B3/23" >B3/23</option> }
+                        {salesOffice == "PT Properti Berkat Cahaya Anug" && salesExecutive == "Anthonye Caeisar Lahoya" && <option value="B8/23" >B8/23</option> }
+                        {salesOffice == "PT Pintu Berkat Bersama" && salesExecutive == "Michael" && <option value="B2/25" >B2/25</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Andrian Chandana Deva" && <option value="B1/25" >B1/25</option> }
+                        {salesOffice == "PT. Catur Graha Sejahtera" && salesExecutive == "Zacharia Agusto Dumais" && <option value="B6/20" >B6/20</option> }
+                        {salesOffice == "PT Enam Gemilang Abadi" && salesExecutive == "Darmawan" && <option value="B2/33" >B2/33</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Kelvin Ang Luis" && <option value="B6/23" >B6/23</option> }
+                        {salesOffice == "PT Kemah Properti Indonesia" && salesExecutive == "Sherly" && <option value="B3/25" >B3/25</option> }
+                        {salesOffice == "PT Berkat Mulia Pratama" && salesExecutive == "Ardian Gunawan" && <option value="B5/26" >B5/26</option> }
+                        {salesOffice == "PT Momentum Properti Cemerlang" && salesExecutive == "Kevin Ananta Riadi" && <option value="B6/22" >B6/22</option> }
+                        {salesOffice == "PT Generasi Properti Nusantara" && salesExecutive == "Madelyn Wongkar" && <option value="B3/29" >B3/29</option> }
+                        {salesOffice == "PT Gading Serpong Properti" && salesExecutive == "Renny Rosely" && <option value="B9/9" >B9/9</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "William Chandra Tjiang" && <option value="B2/23" >B2/23</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Reza Alhadithia" && <option value="B9/10" >B9/10</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Kelvin Ang Luis" && <option value="B9/11" >B9/11</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Reza Alhadithia" && <option value="B5/27" >B5/27</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Gerry Lineker Armando Megawe" && <option value="B7/22" >B7/22</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Gerry Lineker Armando Megawe" && <option value="B2/26" >B2/26</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Shelvyana Wijayanti" && <option value="B1/30" >B1/30</option> }
+                        {salesOffice == "PT Pratama Rumah Indonesia" && salesExecutive == "YUKI" && <option value="B9/2" >B9/2</option> }
+                        {salesOffice == "PT Pratama Rumah Indonesia" && salesExecutive == "YUKI" && <option value="B8/20" >B8/20</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Gerry Lineker Armando Megawe" && <option value="B5/22" >B5/22</option> }
+                        {salesOffice == "PT. Elitpro Gading Perkasa" && salesExecutive == "Swandy Sutanto" && <option value="B8/22" >B8/22</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Swandy Sutanto" && <option value="B2/29" >B2/29</option> }
+                        {salesOffice == "PT Kurnia Mitra Harmoni" && salesExecutive == "Martinus Hendratha" && <option value="B9/7" >B9/7</option> }
+                        {salesOffice == "PT Kurnia Mitra Harmoni" && salesExecutive == "Martinus Hendratha" && <option value="B9/6" >B9/6</option> }
+                        {salesOffice == "PT Pintu Berkat Bersama" && salesExecutive == "Michael" && <option value="B3/26" >B3/26</option> }
+                        {salesOffice == "PT Pratama Rumah Indonesia" && salesExecutive == "Hendri" && <option value="B1/28" >B1/28</option> }
+                        {salesOffice == "PT Analis Properti Indonesia" && salesExecutive == "Corry Stefanie" && <option value="B1/26" >B1/26</option> }
+                        {salesOffice == "PT Kemah Properti Indonesia" && salesExecutive == "Sharmaine Huberta A Dermawan" && <option value="B8/19" >B8/19</option> }
+                        {salesOffice == "PT Pintar Properti Nusantara" && salesExecutive == "Putra Andika" && <option value="B2/28" >B2/28</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Gerry Lineker Armando Megawe" && <option value="B6/21" >B6/21</option> }
+                        {salesOffice == "PT Momentum Properti Cemerlang" && salesExecutive == "Herman Yosef" && <option value="B9/3" >B9/3</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Gerry Lineker Armando Megawe" && <option value="B3/28" >B3/28</option> }
+                        {salesOffice == "PT Kencana Abadi Propertindo" && salesExecutive == "William Handoko" && <option value="B8/15" >B8/15</option> }
+                        {salesOffice == "PT Pratama Rumah Indonesia" && salesExecutive == "YUKI" && <option value="B7/25" >B7/25</option> }
+                        {salesOffice == "PT. Tri Elemen Properti" && salesExecutive == "Vivi Hermin" && <option value="B1/20" >B1/20</option> }
+                        {salesOffice == "PT. Sentosa Majujaya Propertin" && salesExecutive == "Jeffrey Hartanto" && <option value="B1/17" >B1/17</option> }
+                        {salesOffice == "PT. Tri Elemen Properti" && salesExecutive == "Vivi Hermin" && <option value="B1/19" >B1/19</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Reza Alhadithia" && <option value="B1/16" >B1/16</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Deanry Irsan" && <option value="B1/21" >B1/21</option> }
+                        {salesOffice == "PT Momentum Properti Cemerlang" && salesExecutive == "Yamin Tanutama" && <option value="B8/17" >B8/17</option> }
+                        {salesOffice == "PT. Tri Elemen Properti" && salesExecutive == "Irene" && <option value="B5/12" >B5/12</option> }
+                        {salesOffice == "PT Pratama Rumah Indonesia" && salesExecutive == "Kevin Krieski" && <option value="B3/16" >B3/16</option> }
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Deanry Irsan" && <option value="B6/18" >B6/18</option> }
+                        {salesOffice == "PT. Catur Graha Sejahtera" && salesExecutive == "Zacharia Agusto Dumais" && <option value="B2/18" >B2/18</option> }
+                      </select>
+                      <label htmlFor="agent">Inhouse agent coordinator</label>
+
                       <select
-                        className="form-select"
+                        type="text"
+                        className="form-control"
                         id="agent"
                         value={agent}
                         onChange={(e) => setAgent(e.target.value)}
@@ -120,9 +272,10 @@ export default function Home() {
                         <option disabled value="">
                           Select Agent
                         </option>
-                        <option value="Sutanto Ferdian">Sutanto Ferdian                        </option>
+                        <option value="Sutanto Ferdian">Sutanto Ferdian</option>
                         <option value="Alam Fajriansyah">Alam Fajriansyah                        </option>
                         <option value="William Oktavianus">William Oktavianus</option>
+
                       </select>
                     </form>
                     <div className=" mt-3">
