@@ -33,7 +33,7 @@ export default function Home() {
         }
       }
     );
-  
+
     // Cleanup function to remove the listener
     return () => unsubscribe();
   }, []);
@@ -125,14 +125,11 @@ export default function Home() {
                 <div className="col">
                   <h1 className="mt-5">Agent Survey</h1>
                   <p>
-                    Thank you for being a valued agent for HIERA.
-                  </p>
+                  Terima kasih telah menjadi agen yang berharga bagi HIERA.                  </p>
                   <p>
-                    We invite you to vote for the Sales Coordinator who supported you best during your purchase process.
-                  </p>
+                  Kami mengundang Anda untuk memilih Koordinator Penjualan yang paling mendukung Anda selama proses pembelian.                  </p>
                   <p>
-                    Your feedback helps us recognize great service and continue improving the customer experience.
-                  </p>
+                  Masukan Anda membantu kami menghargai layanan hebat dan terus meningkatkan pengalaman pelanggan.                  </p>
                 </div>
               </div>
               <div className="container">
@@ -150,7 +147,7 @@ export default function Home() {
                         onChange={(e) => setSalesOffice(e.target.value)}
                       >
                         <option default value="">
-                          Select Sales Office
+                          Pilih Kantor Penjualan
                         </option>
                         <option value="PT. Asia Rumah Utama">PT. Asia Rumah Utama</option>
                         <option value="PT Momentum Properti Cemerlang">PT Momentum Properti Cemerlang</option>
@@ -176,6 +173,8 @@ export default function Home() {
                         <option value="PT. Sentosa Majujaya Propertin">PT. Sentosa Majujaya Propertin</option>
                         <option value="PT. Catur Graha Sejahtera">PT. Catur Graha Sejahtera</option>
                       </select>
+                      <br />
+
                       <label htmlFor="agent">Sales Executive</label>
                       <select
                         className="form-select"
@@ -184,7 +183,7 @@ export default function Home() {
                         onChange={(e) => setSalesExecutive(e.target.value)}
                       >
                         <option default value="">
-                          Select Coordinator
+                        Pilih Koordinator
                         </option>
                         {salesOffice == "PT. Asia Rumah Utama" && <option value="Andre Leonardo" >Andre Leonardo</option>}
                         {salesOffice == "PT. Asia Rumah Utama" && <option value="Andrian Chandana Deva" >Andrian Chandana Deva</option>}
@@ -222,7 +221,9 @@ export default function Home() {
                         {salesOffice == "PT. Tri Elemen Properti" && <option value="Irene" >Irene</option>}
                         {salesOffice == "PT Pratama Rumah Indonesia" && <option value="Kevin Krieski" >Kevin Krieski</option>}
                       </select>
-                      <label htmlFor="unit">Seller Unit</label>
+                      <br />
+
+                      <label htmlFor="unit">Unit Penjual</label>
                       <select
                         type="text"
                         className="form-control"
@@ -231,11 +232,11 @@ export default function Home() {
                         onChange={(e) => setUnit(e.target.value)}
                       >
                         <option default value="">
-                          Select Office & Coordinator to Select Unit
+                        Pilih Kantor & Koordinator untuk Memilih Unit
+                                                </option>
+                        <option disabled value="">
+                          Jika Unit tidak ditemukan - berarti unit sudah terisi
                         </option>
-                        <option  disabled value="">
-                          If the Unit is not found - it means the unit is already filled
-                        </option>    
                         {/* Enjoy copy paste hell!*/}
                         {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Andre Leonardo" && !filledUnits.includes("B1/23") && <option value="B1/23" >B1/23</option>}
                         {salesOffice == "PT Momentum Properti Cemerlang" && salesExecutive == "Yoga Tirtabudi" && !filledUnits.includes("B1/29") && <option value="B1/29" >B1/29</option>}
@@ -246,48 +247,49 @@ export default function Home() {
                         {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Andrian Chandana Deva" && !filledUnits.includes("B1/25") && <option value="B1/25" >B1/25</option>}
                         {salesOffice == "PT. Catur Graha Sejahtera" && salesExecutive == "Zacharia Agusto Dumais" && !filledUnits.includes("B6/20") && <option value="B6/20" >B6/20</option>}
                         {salesOffice == "PT Enam Gemilang Abadi" && salesExecutive == "Darmawan" && !filledUnits.includes("B2/33") && <option value="B2/33" >B2/33</option>}
-                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Kelvin Ang Luis" && !filledUnits.includes("B6/23")  && <option value="B6/23" >B6/23</option>}
-                        {salesOffice == "PT Kemah Properti Indonesia" && salesExecutive == "Sherly" && !filledUnits.includes("B3/25")  && <option value="B3/25" >B3/25</option>}
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Kelvin Ang Luis" && !filledUnits.includes("B6/23") && <option value="B6/23" >B6/23</option>}
+                        {salesOffice == "PT Kemah Properti Indonesia" && salesExecutive == "Sherly" && !filledUnits.includes("B3/25") && <option value="B3/25" >B3/25</option>}
                         {salesOffice == "PT Berkat Mulia Pratama" && salesExecutive == "Ardian Gunawan" && !filledUnits.includes("B5/26") && <option value="B5/26" >B5/26</option>}
-                        {salesOffice == "PT Momentum Properti Cemerlang" && salesExecutive == "Kevin Ananta Riadi" && !filledUnits.includes("B6/22")  && <option value="B6/22" >B6/22</option>}
+                        {salesOffice == "PT Momentum Properti Cemerlang" && salesExecutive == "Kevin Ananta Riadi" && !filledUnits.includes("B6/22") && <option value="B6/22" >B6/22</option>}
                         {salesOffice == "PT Generasi Properti Nusantara" && salesExecutive == "Madelyn Wongkar" && !filledUnits.includes("B3/29") && <option value="B3/29" >B3/29</option>}
                         {salesOffice == "PT Gading Serpong Properti" && salesExecutive == "Renny Rosely" && !filledUnits.includes("B9/9") && <option value="B9/9" >B9/9</option>}
                         {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "William Chandra Tjiang" && !filledUnits.includes("B2/23") && <option value="B2/23" >B2/23</option>}
-                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Reza Alhadithia" && !filledUnits.includes("B9/10")  && <option value="B9/10" >B9/10</option>}
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Reza Alhadithia" && !filledUnits.includes("B9/10") && <option value="B9/10" >B9/10</option>}
                         {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Kelvin Ang Luis" && !filledUnits.includes("B9/11") && <option value="B9/11" >B9/11</option>}
-                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Reza Alhadithia" && !filledUnits.includes("B5/27")  && <option value="B5/27" >B5/27</option>}
-                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Gerry Lineker Armando Megawe" && !filledUnits.includes("B7/22")  && <option value="B7/22" >B7/22</option>}
-                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Gerry Lineker Armando Megawe" && !filledUnits.includes("B2/26")  && <option value="B2/26" >B2/26</option>}
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Reza Alhadithia" && !filledUnits.includes("B5/27") && <option value="B5/27" >B5/27</option>}
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Gerry Lineker Armando Megawe" && !filledUnits.includes("B7/22") && <option value="B7/22" >B7/22</option>}
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Gerry Lineker Armando Megawe" && !filledUnits.includes("B2/26") && <option value="B2/26" >B2/26</option>}
                         {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Shelvyana Wijayanti" && !filledUnits.includes("B1/30") && <option value="B1/30" >B1/30</option>}
-                        {salesOffice == "PT Pratama Rumah Indonesia" && salesExecutive == "YUKI" && !filledUnits.includes("B9/2")  && <option value="B9/2" >B9/2</option>}
+                        {salesOffice == "PT Pratama Rumah Indonesia" && salesExecutive == "YUKI" && !filledUnits.includes("B9/2") && <option value="B9/2" >B9/2</option>}
                         {salesOffice == "PT Pratama Rumah Indonesia" && salesExecutive == "YUKI" && !filledUnits.includes("B8/20") && <option value="B8/20" >B8/20</option>}
                         {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Gerry Lineker Armando Megawe" && !filledUnits.includes("B5/22") && <option value="B5/22" >B5/22</option>}
                         {salesOffice == "PT. Elitpro Gading Perkasa" && salesExecutive == "Swandy Sutanto" && !filledUnits.includes("B8/22") && <option value="B8/22" >B8/22</option>}
-                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Swandy Sutanto" && !filledUnits.includes("B2/29")  && <option value="B2/29" >B2/29</option>}
+                        {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Swandy Sutanto" && !filledUnits.includes("B2/29") && <option value="B2/29" >B2/29</option>}
                         {salesOffice == "PT Kurnia Mitra Harmoni" && salesExecutive == "Martinus Hendratha" && !filledUnits.includes("B9/7") && <option value="B9/7" >B9/7</option>}
                         {salesOffice == "PT Kurnia Mitra Harmoni" && salesExecutive == "Martinus Hendratha" && !filledUnits.includes("B9/6") && <option value="B9/6" >B9/6</option>}
                         {salesOffice == "PT Pintu Berkat Bersama" && salesExecutive == "Michael" && !filledUnits.includes("B3/26") && <option value="B3/26" >B3/26</option>}
-                        {salesOffice == "PT Pratama Rumah Indonesia" && salesExecutive == "Hendri" && !filledUnits.includes("B1/28")  && <option value="B1/28" >B1/28</option>}
+                        {salesOffice == "PT Pratama Rumah Indonesia" && salesExecutive == "Hendri" && !filledUnits.includes("B1/28") && <option value="B1/28" >B1/28</option>}
                         {salesOffice == "PT Analis Properti Indonesia" && salesExecutive == "Corry Stefanie" && !filledUnits.includes("B1/26") && <option value="B1/26" >B1/26</option>}
                         {salesOffice == "PT Kemah Properti Indonesia" && salesExecutive == "Sharmaine Huberta A Dermawan" && !filledUnits.includes("B8/19") && <option value="B8/19" >B8/19</option>}
-                        {salesOffice == "PT Pintar Properti Nusantara" && salesExecutive == "Putra Andika" && !filledUnits.includes("B2/28")  && <option value="B2/28" >B2/28</option>}
+                        {salesOffice == "PT Pintar Properti Nusantara" && salesExecutive == "Putra Andika" && !filledUnits.includes("B2/28") && <option value="B2/28" >B2/28</option>}
                         {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Gerry Lineker Armando Megawe" && !filledUnits.includes("B6/21") && <option value="B6/21" >B6/21</option>}
                         {salesOffice == "PT Momentum Properti Cemerlang" && salesExecutive == "Herman Yosef" && !filledUnits.includes("B9/3") && <option value="B9/3" >B9/3</option>}
                         {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Gerry Lineker Armando Megawe" && !filledUnits.includes("B3/28") && <option value="B3/28" >B3/28</option>}
                         {salesOffice == "PT Kencana Abadi Propertindo" && salesExecutive == "William Handoko" && !filledUnits.includes("B8/15") && <option value="B8/15" >B8/15</option>}
                         {salesOffice == "PT Pratama Rumah Indonesia" && salesExecutive == "YUKI" && !filledUnits.includes("B7/25") && <option value="B7/25" >B7/25</option>}
                         {salesOffice == "PT. Tri Elemen Properti" && salesExecutive == "Vivi Hermin" && !filledUnits.includes("B1/20") && <option value="B1/20" >B1/20</option>}
-                        {salesOffice == "PT. Sentosa Majujaya Propertin" && salesExecutive == "Jeffrey Hartanto" && !filledUnits.includes("B1/17")  && <option value="B1/17" >B1/17</option>}
+                        {salesOffice == "PT. Sentosa Majujaya Propertin" && salesExecutive == "Jeffrey Hartanto" && !filledUnits.includes("B1/17") && <option value="B1/17" >B1/17</option>}
                         {salesOffice == "PT. Tri Elemen Properti" && salesExecutive == "Vivi Hermin" && !filledUnits.includes("B1/19") && <option value="B1/19" >B1/19</option>}
                         {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Reza Alhadithia" && !filledUnits.includes("B1/16") && <option value="B1/16" >B1/16</option>}
                         {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Deanry Irsan" && !filledUnits.includes("B1/21") && <option value="B1/21" >B1/21</option>}
                         {salesOffice == "PT Momentum Properti Cemerlang" && salesExecutive == "Yamin Tanutama" && !filledUnits.includes("B8/17") && <option value="B8/17" >B8/17</option>}
-                        {salesOffice == "PT. Tri Elemen Properti" && salesExecutive == "Irene" && !filledUnits.includes("B5/12")  && <option value="B5/12" >B5/12</option>}
+                        {salesOffice == "PT. Tri Elemen Properti" && salesExecutive == "Irene" && !filledUnits.includes("B5/12") && <option value="B5/12" >B5/12</option>}
                         {salesOffice == "PT Pratama Rumah Indonesia" && salesExecutive == "Kevin Krieski" && !filledUnits.includes("B3/16") && <option value="B3/16" >B3/16</option>}
                         {salesOffice == "PT. Asia Rumah Utama" && salesExecutive == "Deanry Irsan" && !filledUnits.includes("B6/18") && <option value="B6/18" >B6/18</option>}
                         {salesOffice == "PT. Catur Graha Sejahtera" && salesExecutive == "Zacharia Agusto Dumais" && !filledUnits.includes("B2/18") && <option value="B2/18" >B2/18</option>}
                       </select>
-                      <label htmlFor="agent">Inhouse agent coordinator</label>
+                      <br></br>
+                      <label htmlFor="agent">Tolong Memilih Agen yang membantu Penjualan</label>
 
                       <select
                         type="text"
@@ -297,7 +299,7 @@ export default function Home() {
                         onChange={(e) => setAgent(e.target.value)}
                       >
                         <option disabled value="">
-                          Select Agent
+                        Pilih Agen
                         </option>
                         <option value="Sutanto Ferdian">Sutanto Ferdian</option>
                         <option value="Alam Fajriansyah">Alam Fajriansyah                        </option>
