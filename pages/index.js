@@ -42,15 +42,15 @@ export default function Home() {
     await set(ref(db, 'agentSurvey/' + generateID()), data)
       .then(() => {
         // alert('Data submitted successfully');
+        setSuccess('Data submitted successfully');
         setAgent('');
         setUnit('');
-        setSuccess('Data submitted successfully');
+        setSalesCoordinator('');
+        setSalesOffice
         setTimeout(() => {
           setSuccess('');
-        }
-          , 3000);
+        }, 3000);
         router.push('https://hiera.co.id/');
-
       })
       .catch((error) => {
         // alert('Error submitting data: ' + error.message);
@@ -197,7 +197,6 @@ export default function Home() {
                         {salesOffice == "PT. Tri Elemen Properti" && <option value="Vivi Hermin" >Vivi Hermin</option> }
                         {salesOffice == "PT. Tri Elemen Properti" && <option value="Irene" >Irene</option> }
                         {salesOffice == "PT Pratama Rumah Indonesia" && <option value="Kevin Krieski" >Kevin Krieski</option> }
-                        {salesOffice == "PT. Catur Graha Sejahtera" && <option value="Zacharia Agusto Dumais" >Zacharia Agusto Dumais</option> }
                       </select>
                       <label htmlFor="unit">Seller Unit</label>
                       <select
