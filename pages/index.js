@@ -125,11 +125,11 @@ export default function Home() {
                 <div className="col">
                   <h1 className="mt-5">Agent Survey</h1>
                   <p>
-                  Terima kasih telah menjadi agen yang berharga bagi HIERA.                  </p>
+                    Terima Kasih telah menjadi agents sertia HIERA.                  </p>
                   <p>
-                  Kami mengundang Anda untuk memilih Koordinator Penjualan yang paling mendukung Anda selama proses pembelian.                  </p>
+                    Kami ingin mengundang Anda untuk memilih Koordinator Agent HIERA yang paling mendukung Anda selama proses transaksi dengan HIERA.                  </p>
                   <p>
-                  Masukan Anda membantu kami menghargai layanan hebat dan terus meningkatkan pengalaman pelanggan.                  </p>
+                    Masukan Anda membantu kami menghargai pelayanan yang baik dan terus meningkatkan pengalaman pelanggan.                  </p>
                 </div>
               </div>
               <div className="container">
@@ -138,7 +138,7 @@ export default function Home() {
                     {success && <div className="alert alert-success">{success}</div>}
                     {error && <div className="alert alert-danger">{error}</div>}
                     <form>
-                      <label htmlFor="unit">Sales Office</label>
+                      <label htmlFor="unit">Pilih Sales Office Anda</label>
                       <select
                         type="text"
                         className="form-control"
@@ -147,7 +147,7 @@ export default function Home() {
                         onChange={(e) => setSalesOffice(e.target.value)}
                       >
                         <option default value="">
-                          Pilih Kantor Penjualan
+                          Pilih Sales Office Anda
                         </option>
                         <option value="PT. Asia Rumah Utama">PT. Asia Rumah Utama</option>
                         <option value="PT Momentum Properti Cemerlang">PT Momentum Properti Cemerlang</option>
@@ -175,7 +175,7 @@ export default function Home() {
                       </select>
                       <br />
 
-                      <label htmlFor="agent">Sales Executive</label>
+                      <label htmlFor="agent">Pilih Nama Anda (Sales Executive)</label>
                       <select
                         className="form-select"
                         id="agent"
@@ -183,7 +183,7 @@ export default function Home() {
                         onChange={(e) => setSalesExecutive(e.target.value)}
                       >
                         <option default value="">
-                        Pilih Koordinator
+                          Pilih Sales Exeuctive
                         </option>
                         {salesOffice == "PT. Asia Rumah Utama" && <option value="Andre Leonardo" >Andre Leonardo</option>}
                         {salesOffice == "PT. Asia Rumah Utama" && <option value="Andrian Chandana Deva" >Andrian Chandana Deva</option>}
@@ -232,8 +232,8 @@ export default function Home() {
                         onChange={(e) => setUnit(e.target.value)}
                       >
                         <option default value="">
-                        Pilih Kantor & Koordinator untuk Memilih Unit
-                                                </option>
+                          Pilih Unit yang dijual
+                        </option>
                         <option disabled value="">
                           Jika Unit tidak ditemukan - berarti unit sudah terisi
                         </option>
@@ -289,7 +289,7 @@ export default function Home() {
                         {salesOffice == "PT. Catur Graha Sejahtera" && salesExecutive == "Zacharia Agusto Dumais" && !filledUnits.includes("B2/18") && <option value="B2/18" >B2/18</option>}
                       </select>
                       <br></br>
-                      <label htmlFor="agent">Tolong Memilih Agen yang membantu Penjualan</label>
+                      <label htmlFor="agent">Mohon masukan pilihan Agent Coordinator HIERA yang membantu Anda:</label>
 
                       <select
                         type="text"
@@ -299,7 +299,7 @@ export default function Home() {
                         onChange={(e) => setAgent(e.target.value)}
                       >
                         <option disabled value="">
-                        Pilih Agen
+                          Pilih Agen
                         </option>
                         <option value="Sutanto Ferdian">Sutanto Ferdian</option>
                         <option value="Alam Fajriansyah">Alam Fajriansyah                        </option>
@@ -307,6 +307,8 @@ export default function Home() {
 
                       </select>
                     </form>
+                    <label htmlFor="agent">Terima Kasih atas masukan Anda</label>
+
                     <div className=" mt-3">
                       <button className="btn btn-primary" disabled={agent === "" || unit === "" || salesExecutive === "" || salesOffice === ""} onClick={letGO}>Submit!</button>
                     </div>
