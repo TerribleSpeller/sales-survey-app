@@ -125,7 +125,7 @@ export default function Home() {
                 <div className="col">
                   <h1 className="mt-5">Agent Survey</h1>
                   <p>
-                    Terima Kasih telah menjadi agents sertia HIERA.                  </p>
+                    Terima Kasih telah menjadi agents setia HIERA.                  </p>
                   <p>
                     Kami ingin mengundang Anda untuk memilih Koordinator Agent HIERA yang paling mendukung Anda selama proses transaksi dengan HIERA.                  </p>
                   <p>
@@ -303,7 +303,6 @@ export default function Home() {
                         </option>
                         <option value="Sutanto Ferdian">Sutanto Ferdian</option>
                         <option value="Alam Fajriansyah">Alam Fajriansyah                        </option>
-                        <option value="William Oktavianus">William Oktavianus</option>
 
                       </select>
                     </form>
