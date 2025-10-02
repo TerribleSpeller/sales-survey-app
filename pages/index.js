@@ -182,7 +182,7 @@ export default function Home() {
                         {salesOffice == "PT Sukses Muda Sejati" && <option value="Kevin Julian" >Kevin Julian</option>}
                         {salesOffice == "PT Momentum Properti Cemerlang" && <option value="Putri Pratiwi Sari" >Putri Pratiwi Sari</option>}
                         {salesOffice == "PT. Catur Graha Sejahtera" && <option value="Dodi Asfera Aripin" >Dodi Asfera Aripin</option>}
-                        {salesOffice == "PT. Asia Rumah Utama" && <option value="Gerry Lineker Armando Megawe" >Gerry Lineker Armando Megawe</option>}
+                        {/* {salesOffice == "PT. Asia Rumah Utama" && <option value="Gerry Lineker Armando Megawe" >Gerry Lineker Armando Megawe</option>} */}
                         {salesOffice == "PT. Asia Rumah Utama" && <option value="Reza Alhadithia" >Reza Alhadithia</option>}
                         {salesOffice == "PT Analis Properti Indonesia" && <option value="Febrico" >Febrico</option>}
                         {salesOffice == "PT. Asia Rumah Utama" && <option value="Cornelius" >Cornelius</option>}
