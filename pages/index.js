@@ -127,7 +127,7 @@ export default function Home() {
                   <p>
                     Terima Kasih telah menjadi agents setia HIERA.                  </p>
                   <p>
-                    Kami ingin mengundang Anda untuk memilih Koordinator Agent HIERA yang paling mendukung Anda selama proses transaksi dengan HIERA.                  </p>
+                    Kami mengundang Anda untuk berpartisipasi dalam pemilihan Koordinator Agent HIERA yang membantu selama proses transaksi dengan HIERA.                </p>
                   <p>
                     Masukan Anda membantu kami menghargai pelayanan yang baik dan terus meningkatkan pengalaman pelanggan.                  </p>
                 </div>
