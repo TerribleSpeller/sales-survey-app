@@ -174,7 +174,7 @@ export default function Home() {
                         onChange={(e) => setSalesExecutive(e.target.value)}
                       >
                         <option default value="">
-                          Pilih Sales Exeuctive
+                          Pilih Sales Executive
                         </option>
 
                         {salesOffice == "PT Pintar Properti Nusantara" && <option value="Putra Andika" >Putra Andika</option>}
